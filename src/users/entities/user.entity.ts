@@ -3,7 +3,10 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
+  OneToMany
 } from 'typeorm';
+
+import { Category } from 'src/categories/entities/category.entity';
 
 @Entity('users')
 export class User {
@@ -23,4 +26,7 @@ export class User {
 
   @CreateDateColumn()
   createdAt!: Date;
+
+  @OneToMany(() => Category, (category) => category.user)
+    categories!: Category[];
 }
