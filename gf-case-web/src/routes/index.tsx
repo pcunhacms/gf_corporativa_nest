@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Transactions from "../pages/Transactions/Transactions";
+import Categories from "../pages/Categories/Categories";
 import { AppLayout } from "../layouts/AppLayout";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/categories",
-        element: <div>Categories</div>,
+        element: <Categories />,
       },
     ],
   },
