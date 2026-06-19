@@ -167,8 +167,25 @@ npm run build
 
 ## Testes
 
+Executa os testes automatizados das funcionalidades da aplicação:
+
 ```bash
 npm run test
+```
+
+Executa os testes de ingestão/população de dados utilizados durante os testes:
+
+```bash
+npm run test:seed
+```
+
+Scripts disponíveis:
+
+```json
+{
+  "test": "jest",
+  "test:seed": "jest --config ./test/jest-e2e.json"
+}
 ```
 
 ## Deploy
@@ -195,9 +212,10 @@ Senha:
 123456
 ```
 
+
 ## Observações
 
 * O frontend utiliza Zustand para gerenciamento de autenticação.
 * O backend utiliza validação de dados com class-validator.
-* O CORS é configurado para permitir acesso do frontend local e também de uma origem configurada através da variável FRONTEND_URL.
+* O CORS é configurado para permitir acesso do frontend local e também de uma origem configurada através da variável `FRONTEND_URL`.
 * O projeto foi desenvolvido utilizando TypeScript em modo strict tanto no backend quanto no frontend.
