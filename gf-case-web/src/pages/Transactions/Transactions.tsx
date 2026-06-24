@@ -160,13 +160,13 @@ export default function Transactions() {
                 onStartDateChange={setStartDate}
                 onEndDateChange={setEndDate}
                 onFilter={() =>
-  loadTransactions(1, {
-    type: typeFilter,
-    categoryId: categoryFilter,
-    startDate,
-    endDate,
-  })
-}
+                    loadTransactions(1, {
+                        type: typeFilter,
+                        categoryId: categoryFilter,
+                        startDate,
+                        endDate,
+                    })
+                }
                 onClear={() => {
                     setTypeFilter("");
                     setCategoryFilter("");
