@@ -159,7 +159,14 @@ export default function Transactions() {
                 onCategoryChange={setCategoryFilter}
                 onStartDateChange={setStartDate}
                 onEndDateChange={setEndDate}
-                onFilter={() => loadTransactions(1)}
+                onFilter={() =>
+  loadTransactions(1, {
+    type: typeFilter,
+    categoryId: categoryFilter,
+    startDate,
+    endDate,
+  })
+}
                 onClear={() => {
                     setTypeFilter("");
                     setCategoryFilter("");
@@ -194,8 +201,23 @@ export default function Transactions() {
             <TransactionsPagination
                 page={page}
                 lastPage={lastPage}
-                onPrevious={() => loadTransactions(page - 1)}
-                onNext={() => loadTransactions(page + 1)}
+                onPrevious={() =>
+                    loadTransactions(page - 1, {
+                        type: typeFilter,
+                        categoryId: categoryFilter,
+                        startDate,
+                        endDate,
+                    })
+                }
+
+                onNext={() =>
+                    loadTransactions(page + 1, {
+                        type: typeFilter,
+                        categoryId: categoryFilter,
+                        startDate,
+                        endDate,
+                    })
+                }
             />
 
             <TransactionModal
